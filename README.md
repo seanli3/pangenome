@@ -5,20 +5,21 @@
 [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A520.10.0-brightgreen.svg)](https://www.nextflow.io/)
 
 [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](https://bioconda.github.io/)
-[![Docker](https://img.shields.io/docker/automated/nfcore/pangenome.svg)](https://hub.docker.com/r/nfcore/pangenome)
+[![Docker](https://img.shields.io/docker/automated/sohey/pangenome.svg)](https://hub.docker.com/r/sohey/pangenome)
 [![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23pangenome-4A154B?logo=slack)](https://nfcore.slack.com/channels/pangenome)
 
 ## Introduction
 
 <!-- TODO nf-core: Write a 1-2 sentence summary of what data the pipeline is for and what it does -->
+
 **nf-core/pangenome** is a bioinformatics best-practise analysis pipeline for the rendering of a collection of sequences into a pangenome graph.
-Its goal is to build a graph that is locally directed and acyclic while preserving large-scale variation. Maintaining local linearity is important for interpretation, visualization, mapping, comparative genomics, and reuse of pangenome graphs**.
+Its goal is to build a graph that is locally directed and acyclic while preserving large-scale variation. Maintaining local linearity is important for interpretation, visualization, mapping, comparative genomics, and reuse of pangenome graphs\*\*.
 
 The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with docker containers making installation trivial and results highly reproducible.
 
 ## Quick Start
 
- **Warning:** The Dockerfile Github Action is not running, yet. Therefore, make sure you always have the latest image. Another caveat is that you need to clone the repository before you can execute the pipeline. Once we have an automated docker image build on `nf-core`, these inconveniences will be gone.
+**Warning:** The Dockerfile Github Action is not running, yet. Therefore, make sure you always have the latest image. Another caveat is that you need to clone the repository before you can execute the pipeline. Once we have an automated docker image build on `nf-core`, these inconveniences will be gone.
 
 1. Install [`nextflow`](https://nf-co.re/usage/installation)
 
@@ -27,24 +28,24 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
 3. Build the current docker image if necessary
 
    ```bash
-   docker build --no-cache . -t nfcore/pangenome:dev
+   docker build --no-cache . -t sohey/pangenome:latest
    ```
 
 4. Test the workflow on a minimal dataset
 
-    ```bash
-    nextflow run nf-core/pangenome -profile test,<docker/singularity/podman/conda/institute>
-    ```
+   ```bash
+   nextflow run nf-core/pangenome -profile test,<docker/singularity/podman/conda/institute>
+   ```
 
-    [//]: # (```bash nextflow run nf-core/pangenome -profile test,<docker/singularity/conda/institute>```)
+   [//]: # '```bash nextflow run nf-core/pangenome -profile test,<docker/singularity/conda/institute>```'
 
-    > Please check [nf-core/configs](https://github.com/nf-core/configs#documentation) to see if a custom config file to run nf-core pipelines already exists for your Institute. If so, you can simply use `-profile <institute>` in your command. This will enable either `docker` or `singularity` and set the appropriate execution settings for your local compute environment.
+   > Please check [nf-core/configs](https://github.com/nf-core/configs#documentation) to see if a custom config file to run nf-core pipelines already exists for your Institute. If so, you can simply use `-profile <institute>` in your command. This will enable either `docker` or `singularity` and set the appropriate execution settings for your local compute environment.
 
 5. Start running your own analysis!
 
-    ```bash
-    nextflow run nf-core/pangenome -profile <docker/singularity/podman/conda/institute> --input '*.fa.gz'
-    ```
+   ```bash
+   nextflow run nf-core/pangenome -profile <docker/singularity/podman/conda/institute> --input '*.fa.gz'
+   ```
 
 See [usage docs](https://nf-co.re/pangenome/usage) for all of the available options when running the pipeline.
 
@@ -64,14 +65,14 @@ nf-core/pangenome was originally adapted from the pangenome graph builder [`pggb
 
 Many thanks to all who have helped out and contributed along the way, including (but not limited to)\*:
 
-| Name                                                     | Affiliation                                                                           |
-|----------------------------------------------------------|---------------------------------------------------------------------------------------|
-| [Philipp Ehmele](https://github.com/imipenem)            | [University of Hamburg, Hamburg, Germany](https://www.uni-hamburg.de/en.html)         |
+| Name                                                     | Affiliation                                                                                                                                                                                                                                                                 |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Philipp Ehmele](https://github.com/imipenem)            | [University of Hamburg, Hamburg, Germany](https://www.uni-hamburg.de/en.html)                                                                                                                                                                                               |
 | [Erik Garisson](https://github.com/ekg)                  | [Genomics Institute, University of California, Santa Cruz, Santa Cruz, CA, USA](https://ucscgenomics.soe.ucsc.edu/)<br />[Biomolecular Engineering and Bioinformatics, University of California Santa Cruz, Santa Cruz, CA, USA](https://admissions.sa.ucsc.edu/majors/beb) |
-| [Andrea Guarracino](https://github.com/AndreaGuarracino) | [University of Rome Tor Vergata, Rome, Italy](http://www.scienze.uniroma2.it/)        |
-| [Michael Heuer](https://github.com/heuermh)              | [UC Berkeley, USA](https://rise.cs.berkeley.edu)                                      |
-| [Lukas Heumos](https://github.com/zethson)               | [Quantitative Biology Center (QBiC) Tübingen, University of Tübingen, Germany](https://uni-tuebingen.de/en/research/research-infrastructure/quantitative-biology-center-qbic/) |
-| [Simon Heumos](https://github.com/subwaystation)         | [Quantitative Biology Center (QBiC) Tübingen, University of Tübingen, Germany](https://uni-tuebingen.de/en/research/research-infrastructure/quantitative-biology-center-qbic/) |
+| [Andrea Guarracino](https://github.com/AndreaGuarracino) | [University of Rome Tor Vergata, Rome, Italy](http://www.scienze.uniroma2.it/)                                                                                                                                                                                              |
+| [Michael Heuer](https://github.com/heuermh)              | [UC Berkeley, USA](https://rise.cs.berkeley.edu)                                                                                                                                                                                                                            |
+| [Lukas Heumos](https://github.com/zethson)               | [Quantitative Biology Center (QBiC) Tübingen, University of Tübingen, Germany](https://uni-tuebingen.de/en/research/research-infrastructure/quantitative-biology-center-qbic/)                                                                                              |
+| [Simon Heumos](https://github.com/subwaystation)         | [Quantitative Biology Center (QBiC) Tübingen, University of Tübingen, Germany](https://uni-tuebingen.de/en/research/research-infrastructure/quantitative-biology-center-qbic/)                                                                                              |
 
 > \* Listed in alphabetical order
 

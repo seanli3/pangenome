@@ -62,22 +62,22 @@ They are loaded in sequence, so later profiles can overwrite earlier profiles.
 
 If `-profile` is not specified, the pipeline will run locally and expect all software to be installed and available on the `PATH`. This is _not_ recommended.
 
-* `docker`
-  * A generic configuration profile to be used with [Docker](https://docker.com/)
-  * Pulls software from Docker Hub: [`nfcore/pangenome`](https://hub.docker.com/r/nfcore/pangenome/)
-* `singularity`
-  * A generic configuration profile to be used with [Singularity](https://sylabs.io/docs/)
-  * Pulls software from Docker Hub: [`nfcore/pangenome`](https://hub.docker.com/r/nfcore/pangenome/)
-* `podman`
-  * A generic configuration profile to be used with [Podman](https://podman.io/)
-  * Pulls software from Docker Hub: [`nfcore/pangenome`](https://hub.docker.com/r/nfcore/pangenome/)
-* `conda`
-  * Please only use Conda as a last resort i.e. when it's not possible to run the pipeline with Docker, Singularity or Podman.
-  * A generic configuration profile to be used with [Conda](https://conda.io/docs/)
-  * Pulls most software from [Bioconda](https://bioconda.github.io/)
-* `test`
-  * A profile with a complete configuration for automated testing
-  * Includes links to test data so needs no other parameters
+- `docker`
+  - A generic configuration profile to be used with [Docker](https://docker.com/)
+  - Pulls software from Docker Hub: [`sohey/pangenome`](https://hub.docker.com/r/sohey/pangenome/)
+- `singularity`
+  - A generic configuration profile to be used with [Singularity](https://sylabs.io/docs/)
+  - Pulls software from Docker Hub: [`sohey/pangenome`](https://hub.docker.com/r/sohey/pangenome/)
+- `podman`
+  - A generic configuration profile to be used with [Podman](https://podman.io/)
+  - Pulls software from Docker Hub: [`sohey/pangenome`](https://hub.docker.com/r/sohey/pangenome/)
+- `conda`
+  - Please only use Conda as a last resort i.e. when it's not possible to run the pipeline with Docker, Singularity or Podman.
+  - A generic configuration profile to be used with [Conda](https://conda.io/docs/)
+  - Pulls most software from [Bioconda](https://bioconda.github.io/)
+- `test`
+  - A profile with a complete configuration for automated testing
+  - Includes links to test data so needs no other parameters
 
 ### `-resume`
 

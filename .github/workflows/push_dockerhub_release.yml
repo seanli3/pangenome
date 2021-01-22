@@ -19,11 +19,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build new docker image
-        run: docker build --no-cache . -t nfcore/pangenome:latest
+        run: docker build --no-cache . -t sohey/pangenome:latest
 
       - name: Push Docker image to DockerHub (release)
         run: |
           echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-          docker push nfcore/pangenome:latest
-          docker tag nfcore/pangenome:latest nfcore/pangenome:${{ github.event.release.tag_name }}
-          docker push nfcore/pangenome:${{ github.event.release.tag_name }}
+          docker push sohey/pangenome:latest
+          docker tag sohey/pangenome:latest sohey/pangenome:${{ github.event.release.tag_name }}
+          docker push sohey/pangenome:${{ github.event.release.tag_name }}

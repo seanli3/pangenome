@@ -57,7 +57,7 @@ Have you provided the following extra information/files:
 
 - Engine: <!-- [e.g. Conda, Docker, Singularity or Podman] -->
 - version: <!-- [e.g. 1.0.0] -->
-- Image tag: <!-- [e.g. nfcore/pangenome:1.0.0] -->
+- Image tag: <!-- [e.g. sohey/pangenome:1.0.0] -->
 
 ## Additional context
 

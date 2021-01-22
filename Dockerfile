@@ -1,12 +1,12 @@
-FROM ghcr.io/pangenome/pggb:20201201231633a17703
+FROM sohey/pggb:latest
 LABEL authors="Simon Heumos, Michael Heuer, Lukas Heumos, Erik Garrison, Andrea Guarracino" \
-      description="Docker image containing all software requirements for the nf-core/pangenome pipeline"
+    description="Docker image containing all software requirements for the nf-core/pangenome pipeline"
 
 # Install procps so that Nextflow can poll CPU usage and
 # deep clean the apt cache to reduce image/layer size
 RUN apt-get update \
     && apt-get install -y wget \
-                          procps \
+    procps \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Install miniconda
